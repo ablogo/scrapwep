@@ -78,6 +78,7 @@ namespace Service
 
                         tempGenre = new Genre() { Name = name, ShortCut = shortcut, ParentId = genreId };
                         repo.Save(tempGenre);
+                        //Se uso recursion para obtener los sub generos anidados.
                         LookSubGenres(url, (genre + "/" + shortcut), tempGenre.GenreId);
                     }
                 }
